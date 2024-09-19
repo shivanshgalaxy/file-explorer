@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    background: #7FDEFF;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    background-color: var(--background-grey);
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+/* Hover effect */
+input[type="text"]:hover {
+    border-color: #999;
+}
+
+/* Focus effect */
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 5px --dark-blue; /* Add a box shadow */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row color */
+/* tr:nth-child(even) {
+    background-color: #60BBFB;
+} */
+
+/* Style for images */
+.file-logo {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* FILE ASSETS LINK - https://www.flaticon.com/packs/files-170 */
+/* USER PROFILES LINK - https://www.flaticon.com/packs/avatars-90?word=user%20profile */
+
+:root {
+    --sidebar-width: 300px;
+    --dark-blue: #2A8FD7;
+    --medium-blue: #37A0EA;
+    --light-blue: #60BBFB;
+    --background-grey: #F3F6F9;
+    --pure-white: #FFFFFF;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background-color: var(--medium-blue);
+}
+
+.sidebar * {
+    background-color: inherit;
+}
+
+.sidebar .sidebar-file-menu ul {
+    list-style: none;
+}
+
+.sidebar .app-name {
+    background-color: var(--dark-blue);
+}
+
+.sidebar .app-name span {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    height: 58px;
+    gap: 12px;
+    font-size: 20px;
+    color: var(--pure-white);
+    text-transform: lowercase;
+}
+
+.sidebar .app-name img {
+    width: 30px;
+}
+
+.sidebar .slide-btn {
+    height: 0;
+    width: 28px;
+    position: relative;
+    right: -100%;
+    top: 50%;
+}
+
+.sidebar .slide-btn button {
+    font-size: 32px;
+    border: none;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sidebar .slide-btn button:hover {
+    background-color: #267fbe;
+}
+
+.main-view {
+    margin-left: var(--sidebar-width);
+    padding: 12px 24px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    margin: 0 0 4px 0;
+}
+
+.top-bar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+}
+
+.top-bar .right-section .user-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-bar .right-section .user-name img {
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+.recent-section {
+    margin-top: 4px;
+}
+
+.recent-section .recent-files {
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    padding-bottom: 6px;
+}
+
+.recent-section .card {
+    display: flex;
+    border: 1px solid #ccc;
+    gap: 4px;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.recent-section .card * {
+    background-color: inherit;
+}
+
+.recent-section .card:hover {
+    background-color: #7FDEFF;
+    transition: 0.2s ease-in;
+}
+
+.recent-section,
+.my-files-section {
+    margin-top: 8px;
+}
+
+.my-files-section > div.my-files > table > tbody > tr > td:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.my-files tr * {
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.my-files tbody tr:hover {
+    background-color: #7FDEFF;
+    transition: 0.2s ease-in;
+}
+
+.my-files table tr img,
+.recent-files .card img,
+.top-bar .right-section .user-name img
+{
+    width: 40px;
+}
+
+.margin-top-1000px {
+    margin-top: 1000px;
+}
+
+.footer {
+    text-align: center;
+    padding: 12px;
+}
+
+.user-name {
+    cursor: pointer;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .bottom {
+    margin: 14px;
+}
+
+.sidebar-file-menu li {
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 2px;
+}
+
+.sidebar-file-menu {
+    margin: 4px 0px 4px -20px;
+    padding-right: 16px;
+    flex-wrap: wrap;
+}
+
+.sidebar-file-menu li ul {
+    padding-left: 18px;
+}
+
+.sidebar-file-menu li:hover {
+    background-color: #2a8cd2;
+    transition: 0.2s ease-in;
+}
+
+.sidebar-file-menu li ul li:hover {
+    background-color: rgb(69, 162, 228);
+    transition: 0.2s ease-in;
+}
+
+.bottom-size-info {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.dashboard {
+    display: flex;
+}
+
+svg {
+    width: 114px;
+    height: 114px;
+    margin: 1em;
+}
+
+.bg {
+    fill: none;
+    stroke-width: 10px;
+    stroke: #1A2C34;
+}
+
+.meter {
+    fill: none;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: 0 360; /* Start with an empty circle */
+    stroke: #6b89ee;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2a4453;
+    border-radius: 12px;
+    width: 274px; /* Adjust width to accommodate sidebar */
+    position: fixed; /* Fixed position to keep it at the bottom */
+    bottom: 0; /* Align to the bottom */
+}
+
+.bottom {
+    margin: 10px 0; /* Adjust top and bottom margin */
+    color: #fff; /* Change text color if needed */
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+}
+
+text {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    text-anchor: middle; /* Center the text horizontally */
+    fill: #fff; /* Text color */
+}
+
+.sidebar-file-menu li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
