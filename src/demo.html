@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Side-bar File Menu</title>
+<style>
+    .sidebar-file-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+    .sidebar-file-menu ul ul {
+        display: none;
+        list-style: none;
+        padding-left: 20px;
+    }
+    .sidebar-file-menu li {
+        cursor: pointer;
+    }
+    .sidebar-file-menu li:hover {
+        background-color: lightgray;
+    }
+</style>
+</head>
+<body>
+
+<div class="sidebar-file-menu">
+    <ul>
+        <li>Folder 1
+            <ul>
+                <li>file 1</li>
+                <li>file 2</li>
+                <li>file 3</li>
+            </ul>
+        </li>
+        <li>Folder 2
+            <ul>
+                <li>file 4</li>
+                <li>file 5</li>
+                <li>file 6</li>
+            </ul>
+        </li>
+        <li>Folder 3
+            <ul>
+                <li>file 7</li>
+                <li>file 8</li>
+                <li>file 9</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    // Add click event listener to each folder
+    document.querySelectorAll('.sidebar-file-menu ul ul').forEach(item => {
+        item.parentElement.addEventListener('click', event => {
+            event.stopPropagation(); // Prevents the click event from bubbling up to the parent
+            const ul = item;
+            if (ul) {
+                ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    });
+
+    // Remove or append data to the ul when a folder is clicked
+    document.querySelectorAll('.sidebar-file-menu ul > li').forEach(item => {
+        item.addEventListener('click', event => {
+            const ul = item.querySelector('ul');
+            if (ul) {
+                ul.innerHTML = ul.innerHTML ? '' : '<li>New file</li>';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

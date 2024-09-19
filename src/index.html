@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameBox[Demo Name]</title>
+    <link rel="icon" href="./assets/fav-icon-2-512.png">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="top">
+            <div class="app-name">
+                <span>
+                    <img src="./assets/fav-icon-2-512.png" alt="frame box logo">Frame.Box
+                </span>
+            </div>
+            <div class="sidebar-file-menu">
+                <ul>
+                    <li>Dummy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="size-info">
+                <p>Used Space: <span id="usedSpace">5.9 GB</span></p>
+                <p>Free Space: <span id="freeSpace">10.1 GB</span></p>
+            </div>
+            <div class="dashboard">
+                <svg>
+                    <circle class="bg" cx="57" cy="57" r="52"></circle>
+                    <circle class="meter" cx="57" cy="57" r="52"></circle>
+                    <text x="57" y="57" dominant-baseline="middle" text-anchor="middle">
+                        <!-- Storage percentage here -->
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Screen -->
+    <div class="main-view">
+        <!-- Top bar -->
+        <div class="top-bar">
+            <div class="left-section">
+                <div class="file-path">
+                    <p>File-Path/Goes/Here</p>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="search-bar">
+                    <label for="searching">Search</label>
+                    <input type="text">
+                </div>
+                <div class="user-name">
+                    <img src="./assets/user-profiles/man (1).png" alt="user profile image">
+                    <p>UserName</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="recent-section">
+            <div class="header-text">
+                <p>RECENT</p>
+            </div>
+            <div class="recent-files">
+                <div class="card">
+                    <img src="./assets/file-icons/png-file-.png" alt="file-icon">
+                    <div class="filename">
+                        <p>funny_cat.png</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/mp4-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>Interstellar.mp4</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/doc-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>index.html</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/doc-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>styles.css</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/doc-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>main.js</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/docx-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>Hello_World.doc</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/pptx-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>Presentation.pptx</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/jpg-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>Image.jpeg</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./assets/file-icons/video-file.png" alt="file-icon">
+                    <div class="filename">
+                        <p>Marvel WIN.mp4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-files-section">
+            <div class="header-text">
+                <p>MY FILES</p>
+            </div>
+            <div class="my-files">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>File Size</th>
+                            <th>Creation Date</th>
+                            <th>File Extension</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2021 FrameBox. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Linking JS file -->
+    <script src="./main.js"></script>
+</body>
+</html>
