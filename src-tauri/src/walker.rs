@@ -14,7 +14,9 @@ pub fn get_files_and_details_as_vector(path: String) -> Vec<(String, u64, String
     }
 }
 
-fn get_files_and_details<P: AsRef<Path>>(path: P) -> io::Result<Vec<(String, u64, String, String)>> {
+fn get_files_and_details<P: AsRef<Path>>(
+    path: P,
+) -> io::Result<Vec<(String, u64, String, String)>> {
     let mut result = Vec::new();
 
     for entry in fs::read_dir(path)? {
@@ -27,10 +29,16 @@ fn get_files_and_details<P: AsRef<Path>>(path: P) -> io::Result<Vec<(String, u64
                 None => continue,
             };
             let size = metadata.len();
-            let creation_date = metadata.created()?.duration_since(UNIX_EPOCH)
+            let creation_date = metadata
+                .created()?
+                .duration_since(UNIX_EPOCH)
                 .map_err(|e| io::Error::new(io::ErrorKind::Other, e))?
                 .as_secs();
-            let extension = path.extension().unwrap_or_default().to_string_lossy().into_owned();
+            let extension = path
+                .extension()
+                .unwrap_or_default()
+                .to_string_lossy()
+                .into_owned();
             result.push((file_name, size, creation_date.to_string(), extension));
         }
     }

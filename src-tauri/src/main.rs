@@ -4,9 +4,9 @@
 use std::collections::HashMap;
 use std::time::Instant;
 
-mod walker;
-mod hashmap;
 mod cachehash;
+mod hashmap;
+mod walker;
 
 #[tauri::command]
 fn query_hashmap(name: String) -> Vec<String> {
@@ -31,28 +31,35 @@ fn query_hashmap(name: String) -> Vec<String> {
     println!("Loading cache.bin into memory");
     let now_read_hash_from_cache: Instant = Instant::now();
     fs_hash_map = cachehash::get_hash_from_cache();
-    let time_taken_to_read_hash_from_cache: std::time::Duration = now_read_hash_from_cache.elapsed();
+    let time_taken_to_read_hash_from_cache: std::time::Duration =
+        now_read_hash_from_cache.elapsed();
 
-    println!("Reading HashMap from cache.bin took {:?}", time_taken_to_read_hash_from_cache);
+    println!(
+        "Reading HashMap from cache.bin took {:?}",
+        time_taken_to_read_hash_from_cache
+    );
 
     match fs_hash_map.get(&hashmap::hash_path(&name)) {
         Some(value) => {
             return value.to_vec();
-        },
+        }
         None => {
             return vec!["Given File Not Found".to_string()];
         }
-    
     }
 }
 
-
-fn main() {
+fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
             walker::get_files_and_details_as_vector,
             query_hashmap
-            ])
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+fn main() {
+    run();
 }
